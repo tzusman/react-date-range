@@ -46,7 +46,7 @@ class Calendar extends Component {
     const state = {
       date,
       shownDate : (shownDate || range && range['endDate'] || date).clone().add(offset, 'months'),
-      firstDayOfWeek: (firstDayOfWeek || moment.localeData().firstDayOfWeek()),
+      firstDayOfWeek: (isNaN(firstDayOfWeek) ? moment.localeData().firstDayOfWeek() : firstDayOfWeek),
     }
 
     this.state  = state;
